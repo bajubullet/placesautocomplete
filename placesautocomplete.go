@@ -45,12 +45,12 @@ type (
 	}
 
 	PlaceDetail struct {
-		Phone      string
-		Address    string
-		PostalCode string
-		City       string
-		State      string
-		Country    string
+		Phone      string	`json:"phone"`
+		Address    string	`json:"address"`
+		PostalCode string	`json:"postal_code"`
+		City       string	`json:"city"`
+		State      string	`json:"state"`
+		Country    string	`json:"country"`
 	}
 
 	DetailResult struct {
