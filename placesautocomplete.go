@@ -6,7 +6,6 @@ import (
 	"net/http"
 	"os"
 	"strings"
-	"time"
 )
 
 const (
@@ -15,12 +14,8 @@ const (
 )
 
 var (
-	apiKey = os.Getenv("GOOGLE_MAPS_API_KEY")
-	tr     = &http.Transport{
-		MaxIdleConns:       10,
-		IdleConnTimeout:    30 * time.Second,
-		DisableCompression: true,
-	}
+	apiKey     = os.Getenv("GOOGLE_MAPS_API_KEY")
+	tr         = &http.Transport{}
 	httpClient = &http.Client{Transport: tr}
 )
 
