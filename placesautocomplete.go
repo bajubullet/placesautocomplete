@@ -16,7 +16,12 @@ const (
 
 var (
 	apiKey     = os.Getenv("GOOGLE_MAPS_API_KEY")
-	httpClient = &http.Client{Timeout: 10 * time.Second}
+	tr := &http.Transport{
+		MaxIdleConns:       10,
+		IdleConnTimeout:    30 * time.Second,
+		DisableCompression: true,
+	}
+	httpClient = &http.Client{Transport: tr}
 )
 
 type (
